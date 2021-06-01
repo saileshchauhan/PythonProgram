@@ -17,3 +17,4 @@ try:
         print("Enter in YYYY format")
 except:
     print("Input should be a positive Integer")
+    exit()
