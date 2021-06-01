@@ -3,7 +3,7 @@
 @Date:2021-06-01
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-01
-@Title:To Welcome User
+@Title: Check Leap year
 '''
 try:
     year=int(input("Enter Year in YYYY\n"))
