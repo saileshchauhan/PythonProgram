@@ -21,6 +21,6 @@ try:
                 break
         if(inputNumber>2):
             primeFactor.append(inputNumber)
-        print("prime factors ",*primeFactor)
+        print("All PrimeFactors ",*primeFactor)
 except Exception as ex:
     print(ex.__class__)
