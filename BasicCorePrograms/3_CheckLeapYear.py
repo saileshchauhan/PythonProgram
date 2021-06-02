@@ -13,8 +13,9 @@ try:
             print("Leap Year {0} ".format(year))
         elif(int(year)%4==0 and int(year)%100!=0):
             print("Leap Year {0} ".format(year))
-    else:
-        print("Enter in YYYY format")
-except:
-    print("Input should be a positive Integer")
-    exit()
+            quit()
+        print("Entered Year is not Leap year {0}".format(year))
+        quit()
+    print("Enter in YYYY format")
+except Exception as ex:
+    print(ex.__class__)

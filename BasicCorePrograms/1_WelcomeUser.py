@@ -6,13 +6,13 @@
 @Title:To Welcome User
 '''
 
+import sys
 try:
     userName=str(input("Enter your Full Name\n"))
     userName=userName.replace(" ","")
     if(len(userName)>3):
         print("Hello "+userName+" ,How are you ?")
-    else:
-        print("User Name must be more than 3 characters")
-except:
-    print("Enter Full Name in correct Format")
-    exit()
+        quit()
+    print("User Name must be more than 3 characters") 
+except Exception as ex:
+    print(ex.__class__)

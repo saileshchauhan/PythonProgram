@@ -12,8 +12,8 @@ try:
     if(0<=inputNumber and inputNumber<31):
         while(CONSTANT**power <= CONSTANT**inputNumber):
             for count in range(0,inputNumber):
-                    print(CONSTANT**power)
-                    power+=1
+                print(CONSTANT**power)
+                power+=1
 except Exception as ex:
     print(ex.__class__)
     print("Invalid Input Enter zero or more")

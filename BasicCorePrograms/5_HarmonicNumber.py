@@ -10,9 +10,7 @@ try:
     nthTerm=int(input(" Enter nthTerm for Harmonic nth Number\n"))
     for count in range(1,(nthTerm+1)):
         nthNumber+=(1/count)
-        
+    print("nthNumber {0} for nthTerm {1}".format(nthNumber,nthTerm))
 except Exception as ex:
     print(ex.__class__)
-    quit()
-print("nthNumber {0} for nthTerm {1}".format(nthNumber,nthTerm))
         
