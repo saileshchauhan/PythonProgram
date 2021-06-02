@@ -1,8 +1,8 @@
 '''
 @Author:Sailesh Chauhan
-@Date:2021-06-01
+@Date:2021-06-02
 @Last Modified by:Sailesh Chauhan
-@Last Modified time:2021-06-01
+@Last Modified time:8:00 PM
 @Title: Gambler Program
 '''
 
