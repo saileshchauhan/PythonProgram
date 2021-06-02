@@ -12,6 +12,7 @@ COLUMN_OF_MATRIX=2
 try:
     matrix=[]
     def InputTwoDimensionMatrix():
+        '''Take Input into 2D Matrix'''
         for row in range(1,ROW_OF_MATRIX+1):
             rowMatrix=[]
             for column in range(1,COLUMN_OF_MATRIX+1):
@@ -19,6 +20,7 @@ try:
             matrix.append(rowMatrix)
 
     def PrintTwoDimensionMatrix(matrixPrint):
+        '''Print Values of 2D Matrix'''
         for row in range(ROW_OF_MATRIX):
             for column in range(COLUMN_OF_MATRIX):
                 print(matrixPrint[row][column],end=" ")
