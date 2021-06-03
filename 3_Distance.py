@@ -10,13 +10,25 @@ import sys
 import math
 try:
 
-    def EuclidianDistance(x,y):
+    def euclidianDistance(x,y):
         """This Function returns Euclidian Distance"""
         return math.sqrt(math.pow(x,2)+math.pow(y,2))
+    def Validation(value):
+        if(len(value)!=0):
+            value=float(value)
+            return value
+        if(len(value)==0):
+            print("empty input not allowed")
+            quit()
 
-    inputX_Coordinate=float(input("Enter X-coordinate\n"))
-    inputY_Ordinate=float(input("Enter Y-coordinate\n"))
-    print(EuclidianDistance(inputX_Coordinate,inputY_Ordinate))
+    inputX_Coordinate=(input("Enter X-coordinate\n"))
+    inputX_Coordinate=Validation(inputX_Coordinate)
+    inputY_Ordinate=(input("Enter Y-coordinate\n"))
+    inputY_Ordinate=Validation(inputY_Ordinate)
+
+    print(euclidianDistance(inputX_Coordinate,inputY_Ordinate))
 except Exception as ex:
-    print(ex.__class__)
+    print(ex)
+except TypeError:
+    print("Enter Valid Input")
 

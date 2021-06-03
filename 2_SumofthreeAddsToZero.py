@@ -7,22 +7,36 @@
 '''
 import sys
 try:
-    numberList=[1,3,-4,3,2,1]
-    def FindThreeIntegersAddToZero():
+    def inputFromUser():
+        listOfIntegers=[]
+        numOfintegers=int(input("Enter number of integers to add\n"))
+        if(numOfintegers<0):
+            print("invalid input only whole number allowed")
+            quit()
+        for count in range(numOfintegers):
+            value=int(input("Enter integers\n"))
+            listOfIntegers.append(value)
+        return listOfIntegers
+    def findThreeIntegersAddToZero(list):
         '''Print three integers adding to Zero'''
-        for firstPlace in range(len(numberList)-2):
-            for secondPlace in range(firstPlace+1,(len(numberList)-1)):
-                for thirdPlace in range(secondPlace+1,len(numberList)):
-                    if((numberList[firstPlace]+numberList[secondPlace]+numberList[thirdPlace])==0):
-                        print(numberList[firstPlace],numberList[secondPlace],numberList[thirdPlace])
+        for firstPlace in range(len(list)-2):
+            for secondPlace in range(firstPlace+1,(len(list)-1)):
+                for thirdPlace in range(secondPlace+1,len(list)):
+                    if((list[firstPlace]+list[secondPlace]+list[thirdPlace])==0):
+                        print(list[firstPlace],list[secondPlace],list[thirdPlace])
         return 1
  #Implemented Main definition only for practise       
     def main():
         flag=0
-        flag=FindThreeIntegersAddToZero()
+        numberList=inputFromUser()
+        flag=findThreeIntegersAddToZero(numberList)
         if(flag==0):
             print("No three integers add to zero")
     if __name__=="__main__":
         main()
+except ValueError:
+    print("Only Integers are allowed")
+except TypeError:
+    print("Enter Valid Input")
 except Exception as ex:
-    print(ex.__class__)
+    print(ex)
