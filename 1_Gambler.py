@@ -7,8 +7,22 @@
 '''
 
 import random
+import re
 
 WIN,LOOSE=1,0
+def regex(regexPattern,value):
+    try:
+        if(re.match(regexPattern,value)):
+            value = int(value)
+            if(value<=0):
+                print("Enter Natural Number")
+                quit()
+            return value    
+        print("Invalid Input, Natural Number permitted")
+        quit()
+    except Exception as ex:
+        print(ex)      
+
 def userInput():
     '''
     Description:
@@ -19,9 +33,12 @@ def userInput():
         two variables stackAmount and goalAmount
 
     '''
+    REGEX_NUMBER="^[0-9]{1,}$"
     try:
-        stackAmount=int(input("Enter Total Stack Amount in Rupees\n"))
-        goalAmount=int(input("Enter goal amount in Rupees\n"))
+        stackAmount=(input("Enter Total Stack Amount in Rupees\n"))
+        stackAmount=regex(REGEX_NUMBER,stackAmount)
+        goalAmount=(input("Enter goal amount in Rupees\n"))
+        goalAmount=regex(REGEX_NUMBER,goalAmount)
         return stackAmount,goalAmount
     except Exception as ex:
         print (ex)

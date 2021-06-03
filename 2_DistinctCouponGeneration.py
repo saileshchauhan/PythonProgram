@@ -19,10 +19,13 @@ def userInput(regexPattern):
     '''
     try:
         numberOfCoupons=input("Enter Number of unique coupons to be generated\n")
-        regexResult=re.match(regexPattern,numberOfCoupons)
-        if(regexResult):
+        if(re.match(regexPattern,numberOfCoupons)):
+            if(int(numberOfCoupons)<=0):
+                print("Input less than 0 ")
+                quit()
             return int(numberOfCoupons)
         print("Please enter positive whole number")
+        quit()
     except Exception as ex:
         print(ex)
 def randomCouponCount(couponCount):
@@ -54,5 +57,5 @@ def randomCouponCount(couponCount):
         print(ex)
     
     
-REGEX_NUMBER="^[1-9]{1,}$"
+REGEX_NUMBER="^[0-9]{1,}$"
 print("Random count generated ",randomCouponCount(userInput(REGEX_NUMBER)))
