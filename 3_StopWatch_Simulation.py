@@ -7,20 +7,40 @@
 '''
 
 import time
-try:
-    timeList=[]
-    def SecondToTimeFormat(second):
+timeList=[]
+def SecondToTimeFormat(second):
+    '''
+    Description:
+        Convert second to Time format HH:MM:SS
+    Parameter:
+        seconds
+    Return:
+        List of seconds,minutes,hours
+    '''
+    try:
         minutes,second=second//60,second%60
         hours,minutes=minutes//60,minutes%60
         return [second,minutes,hours]
-    def TimeElapsed():
+    except Exception as ex:
+        print(ex)
+
+def TimeElapsed():
+    '''
+    Description:
+        Calculates time elapsed between start and stop for stop watch
+    Parameters:
+        No Parameters
+    Return:
+        Difference between start and stop
+    '''
+    try:
         input("Press Enter To Start Stop Watch ")
         startTime=time.time()
         input("Press Enter To Stop Stop Watch  ")
         stopTime=time.time()
         return (stopTime-startTime)
+    except Exception as ex:
+        print(ex)
 
-    timeList=SecondToTimeFormat(TimeElapsed())
-    print("Time Elapsed {0}::{1}::{2} ".format(timeList[2],timeList[1],timeList[0]))
-except Exception as ex:
-    print(ex.__class__)
+timeList=SecondToTimeFormat(TimeElapsed())
+print("Time Elapsed {0}::{1}::{2} ".format(timeList[2],timeList[1],timeList[0]))
