@@ -6,29 +6,51 @@
 @Title: Euclidian Distance Between origin and Cartesian Co-oridnates  
 '''
 
-import sys
+import re
 import math
-try:
 
-    def euclidianDistance(x,y):
-        """This Function returns Euclidian Distance"""
+
+def euclidianDistance(x,y):
+    """
+    Description:
+        Method calculates distance between origin and caretsian
+        cordinates.
+    Parameters:
+        Takes two parameters x(co-ordiante) and y(ordinate).
+    Return:
+        Euclidian distance between origin and given cartesian
+        point
+    """
+    try:
         return math.sqrt(math.pow(x,2)+math.pow(y,2))
-    def Validation(value):
-        if(len(value)!=0):
-            value=float(value)
-            return value
-        if(len(value)==0):
-            print("empty input not allowed")
-            quit()
+    except Exception as ex:
+        print(ex)
 
+    #Validation Method
+def validation(value):
+    '''
+    Description:
+        Method validates values given as parameters.
+    Parameters:
+        Takes value as parameter.
+    Return:
+        value after validating.
+    '''
+    try:
+        regexFloat="^[+-]?([0-9]*[.])?[0-9]+$"
+        if(re.match(regexFloat,value)):
+            return float(value)
+        print("Invalid Input")
+        quit()
+    except Exception as ex:
+        print(ex)
+try:  
     inputX_Coordinate=(input("Enter X-coordinate\n"))
-    inputX_Coordinate=Validation(inputX_Coordinate)
+    inputX_Coordinate=validation(inputX_Coordinate)
     inputY_Ordinate=(input("Enter Y-coordinate\n"))
-    inputY_Ordinate=Validation(inputY_Ordinate)
-
+    inputY_Ordinate=validation(inputY_Ordinate)
+    #Function Call
     print(euclidianDistance(inputX_Coordinate,inputY_Ordinate))
 except Exception as ex:
     print(ex)
-except TypeError:
-    print("Enter Valid Input")
 
