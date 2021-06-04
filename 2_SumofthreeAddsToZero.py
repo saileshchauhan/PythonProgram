@@ -61,13 +61,12 @@ def main():
         No return type.
     '''
     try:
-            
         flag=0
         numberList=inputFromUser()
         flag=findThreeIntegersAddToZero(numberList)
         if(flag==0):
             print("No three integers add to zero")
-        if __name__=="__main__":
-            main()
     except Exception as ex:
         print(ex)
+if __name__=="__main__":
+    main()
