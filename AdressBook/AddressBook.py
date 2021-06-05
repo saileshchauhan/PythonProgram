@@ -6,8 +6,15 @@
 @Title:AddressBook using Object Oriented Approach
 '''
 import json
-from collections import namedtuple
-class Contact(object):
+import logging
+
+logging.basicConfig(filename='adresBook.log',level=logging.CRITICAL,format='%(asctime)s - %(levelname)s - %(message)s')
+
+class Contact:
+    '''
+    Description:
+    Function:
+    '''
     def __init__(self,firstName,lastName,city,contact):
         self.firstName=firstName
         self.lastName=lastName
@@ -15,18 +22,26 @@ class Contact(object):
         self.contact =contact
         pass
 
-    def printContactDetails(self):
-        return " {} {} {} {} ".format(self.firstName,self.lastName,self.city,self.contact)
-def addCOntact():
+def addContact():
+    '''
+    Description:
+    Parameters:
+    Return:
+    '''
     try:
         contact=Contact(input("Enter First Name\n"),input("Enter Last Name\n"),input("Enter City Name\n"),input("Enter Contact Number\n"))
         addressBookDict={contact.firstName:contact.__dict__}
         with open('AdressBook.json','w') as file:
             file.write(json.dumps(addressBookDict,indent=4))
     except Exception as ex:
-        print(ex)
+        logging.critical(ex)
 
 def updateContact():
+    '''
+    Description:
+    Parameters:
+    Return:
+    '''
     try:
         contact=Contact(input("Enter First Name\n"),input("Enter Last Name\n"),input("Enter City Name\n"),input("Enter Contact Number\n"))
         with open('AdressBook.json','+r') as file:
@@ -36,21 +51,30 @@ def updateContact():
             json.dump(alreadyExistingContact,file,indent=4)
             file.close()
     except Exception as ex:
-        print(ex)
+        logging.critical(ex)
 
 
 def printContact():
+    '''
+    Description:
+    Parameters:
+    Return:
+    '''
     try:
         with open('AdressBook.json','+r') as file:
             alreadyExistingContact=json.load(file)
             for contact in alreadyExistingContact.values():
-                #print("All contact firstName "+contact)
                 for key,value in contact.items():
                     print(key+" "+value)
     except Exception as ex:
-        print(ex)
+        logging.critical(ex)
 
 def deleteContact():
+    '''
+    Description:
+    Parameters:
+    Return:
+    '''
     try:
         with open('AdressBook.json','+r') as file:
             alreadyExistingContact=json.load(file)
@@ -69,16 +93,21 @@ def deleteContact():
             file.truncate()
             file.close()
     except Exception as ex:
-        print(ex)
+        logging.critical(ex)
     
 def main():
+    '''
+    Description:
+    Parameters:
+    Return:
+    '''
     try:
         choice=""
         while(choice!='5'):
             print("1.Add/Create Contact to AdressBook\n2.Update Contact to AddressBook\n3.Delete Contact from AddressBook\n4.Print All Contact in AddressBook\n5.Quit AdressBook")
             choice=input("Select your option\n")
             if(choice=='1'):
-                addCOntact()
+                addContact()
             elif(choice=='2'):
                 updateContact()
             elif(choice=='3'):
@@ -87,6 +116,6 @@ def main():
                 printContact()
         print("Exited from AddressBook")
     except Exception as ex:
-        print(ex)
+        logging.critical(ex)
 if __name__=="__main__":
     main()
