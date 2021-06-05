@@ -13,7 +13,10 @@ logging.basicConfig(filename='adresBook.log',level=logging.CRITICAL,format='%(as
 class Contact:
     '''
     Description:
+        Name of class is Contact provides blue print to create custom object
+        with attributes firstName,lastName,city,contact
     Function:
+        No Function.
     '''
     def __init__(self,firstName,lastName,city,contact):
         self.firstName=firstName
@@ -25,8 +28,12 @@ class Contact:
 def addContact():
     '''
     Description:
+        Creates contact of type Contact convert contact object to dictionary
+        type and add that object to Json file as JSON.
     Parameters:
+        No parameters.
     Return:
+        No return
     '''
     try:
         contact=Contact(input("Enter First Name\n"),input("Enter Last Name\n"),input("Enter City Name\n"),input("Enter Contact Number\n"))
@@ -39,7 +46,9 @@ def addContact():
 def updateContact():
     '''
     Description:
+        Method adds new contact type to existing JSON file.
     Parameters:
+        No parameters
     Return:
     '''
     try:
@@ -57,7 +66,9 @@ def updateContact():
 def printContact():
     '''
     Description:
+        Prints content of JSON file on console.
     Parameters:
+        No Parameters.
     Return:
     '''
     try:
@@ -72,7 +83,10 @@ def printContact():
 def deleteContact():
     '''
     Description:
+        Method deletes JSON object after loading it from JSON. It allows user
+        delete particular contact. 
     Parameters:
+        No Parameters.
     Return:
     '''
     try:
@@ -85,8 +99,9 @@ def deleteContact():
                 if(keys==entryToDelete):
                     print("person found in AdressBook "+keys)
                     entryToDelete=keys
-                    print("No such person exit in Adressbook")
+                    print("Entry Removed "+entryToDelete)
                     break
+                print("No such person exit in Adressbook")
             del alreadyExistingContact[entryToDelete]
             file.seek(0)
             json.dump(alreadyExistingContact,file,indent=4)
@@ -98,7 +113,9 @@ def deleteContact():
 def main():
     '''
     Description:
+        Main method used to call all feature functions.
     Parameters:
+        No parameters.
     Return:
     '''
     try:
