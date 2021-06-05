@@ -7,9 +7,10 @@
 '''
 import json
 import logging
+from decouple import config 
 
 logging.basicConfig(filename='adresBook.log',level=logging.CRITICAL,format='%(asctime)s - %(levelname)s - %(message)s')
-
+FILE_NAME=config('File_Name')
 class Contact:
     '''
     Description:
@@ -38,7 +39,7 @@ def addContact():
     try:
         contact=Contact(input("Enter First Name\n"),input("Enter Last Name\n"),input("Enter City Name\n"),input("Enter Contact Number\n"))
         addressBookDict={contact.firstName:contact.__dict__}
-        with open('AdressBook.json','w') as file:
+        with open(FILE_NAME,'w') as file:
             file.write(json.dumps(addressBookDict,indent=4))
     except Exception as ex:
         logging.critical(ex)
@@ -51,9 +52,10 @@ def updateContact():
         No parameters
     Return:
     '''
+    #'AdressBook.json'
     try:
         contact=Contact(input("Enter First Name\n"),input("Enter Last Name\n"),input("Enter City Name\n"),input("Enter Contact Number\n"))
-        with open('AdressBook.json','+r') as file:
+        with open(FILE_NAME,'+r') as file:
             alreadyExistingContact=json.load(file)
             alreadyExistingContact.update({contact.firstName:contact.__dict__})
             file.seek(0)
@@ -72,7 +74,7 @@ def printContact():
     Return:
     '''
     try:
-        with open('AdressBook.json','+r') as file:
+        with open(FILE_NAME,'+r') as file:
             alreadyExistingContact=json.load(file)
             for contact in alreadyExistingContact.values():
                 for key,value in contact.items():
@@ -90,7 +92,7 @@ def deleteContact():
     Return:
     '''
     try:
-        with open('AdressBook.json','+r') as file:
+        with open(FILE_NAME,'+r') as file:
             alreadyExistingContact=json.load(file)
             for keys in alreadyExistingContact.keys():
                 print("All contact firstName "+keys)
