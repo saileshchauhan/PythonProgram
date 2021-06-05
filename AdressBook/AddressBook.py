@@ -21,7 +21,7 @@ def addCOntact():
     try:
         contact=Contact(input("Enter First Name\n"),input("Enter Last Name\n"),input("Enter City Name\n"),input("Enter Contact Number\n"))
         addressBookDict={contact.firstName:contact.__dict__}
-        with open('AdressBook.json','+r') as file:
+        with open('AdressBook.json','w') as file:
             file.write(json.dumps(addressBookDict,indent=4))
     except Exception as ex:
         print(ex)
@@ -43,10 +43,10 @@ def printContact():
     try:
         with open('AdressBook.json','+r') as file:
             alreadyExistingContact=json.load(file)
-            for contact in alreadyExistingContact.keys():
-                print("All contact firstName "+contact)
-            for key,value in alreadyExistingContact.values():
-                print(key+" "+value)
+            for contact in alreadyExistingContact.values():
+                #print("All contact firstName "+contact)
+                for key,value in contact.items():
+                    print(key+" "+value)
     except Exception as ex:
         print(ex)
 
@@ -56,12 +56,14 @@ def deleteContact():
             alreadyExistingContact=json.load(file)
             for keys in alreadyExistingContact.keys():
                 print("All contact firstName "+keys)
-            entryToDelete=input("Enter name of entry to delete \n")
-            for keys in alreadyExistingContact.key():
+            entryToDelete=input("Enter name of entry to delete\n")
+            for keys in alreadyExistingContact.keys():
                 if(keys==entryToDelete):
                     print("person found in AdressBook "+keys)
-                    del alreadyExistingContact[entryToDelete]
-            print("No such person exit in Adressbook")
+                    entryToDelete=keys
+                    print("No such person exit in Adressbook")
+                    break
+            del alreadyExistingContact[entryToDelete]
             file.seek(0)
             json.dump(alreadyExistingContact,file,indent=4)
             file.truncate()
@@ -73,7 +75,7 @@ def main():
     try:
         choice=""
         while(choice!='5'):
-            print("1.Add/Create Contact to AdressBook\n2.Update Contact to AddressBook\3.Delete Contact from AddressBook\n4.Print All Contact in AddressBook\n5.Quit AdressBook")
+            print("1.Add/Create Contact to AdressBook\n2.Update Contact to AddressBook\n3.Delete Contact from AddressBook\n4.Print All Contact in AddressBook\n5.Quit AdressBook")
             choice=input("Select your option\n")
             if(choice=='1'):
                 addCOntact()
