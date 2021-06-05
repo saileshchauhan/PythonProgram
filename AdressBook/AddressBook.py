@@ -25,12 +25,10 @@ def addCOntact():
             file.write(json.dumps(addressBookDict,indent=4))
     except Exception as ex:
         print(ex)
-#addCOntact()
 
 def updateContact():
     try:
         contact=Contact(input("Enter First Name\n"),input("Enter Last Name\n"),input("Enter City Name\n"),input("Enter Contact Number\n"))
-        #addressBookDict={"AddressBook Contact":contact.__dict__}
         with open('AdressBook.json','+r') as file:
             alreadyExistingContact=json.load(file)
             alreadyExistingContact.update({contact.firstName:contact.__dict__})
@@ -39,7 +37,7 @@ def updateContact():
             file.close()
     except Exception as ex:
         print(ex)
-#updateContact()
+
 
 def printContact():
     try:
@@ -49,10 +47,8 @@ def printContact():
                 print("All contact firstName "+contact)
             for key,value in alreadyExistingContact.values():
                 print(key+" "+value)
-           # alreadyExistingContact[]
     except Exception as ex:
         print(ex)
-# printContact()
 
 def deleteContact():
     try:
@@ -72,7 +68,23 @@ def deleteContact():
             file.close()
     except Exception as ex:
         print(ex)
-#deleteContact()
     
-
-   
+def main():
+    try:
+        choice=""
+        while(choice!='5'):
+            print("1.Add/Create Contact to AdressBook\n2.Update Contact to AddressBook\3.Delete Contact from AddressBook\n4.Print All Contact in AddressBook\n5.Quit AdressBook")
+            choice=input("Select your option\n")
+            if(choice=='1'):
+                addCOntact()
+            elif(choice=='2'):
+                updateContact()
+            elif(choice=='3'):
+                deleteContact()
+            elif(choice=='4'):
+                printContact()
+        print("Exited from AddressBook")
+    except Exception as ex:
+        print(ex)
+if __name__=="__main__":
+    main()
