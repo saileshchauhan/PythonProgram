@@ -177,3 +177,36 @@ def search_entry(KEY):
     except Exception as ex:
         logging.critical(ex)
 
+def main():
+    '''
+    Description:
+        Method calls all function to run this application.    
+    Parameters:
+        No Parameters.
+    Return:
+        None.
+    '''
+    try:
+        load_JSON_file()
+        choice=''
+        while(choice!='5'):
+            print("1.Add New Doctor Entry\n2.Add New Patient Entry")
+            print("3.Search Doctor by Id,Specialization,Name\n4.Search Patient by Id,Name,MobileNumber")
+            print("5.Exit the Application")
+            choice=input("Make your selection\n")
+            if(choice=='1'):
+                add_doctor_patient_entry("DOCTOR")
+            elif(choice=='2'):
+                add_doctor_patient_entry("PATIENT")
+            elif(choice=='3'):
+                search_entry("DOCTOR")
+            elif(choice=='4'):
+                search_entry("PATIENT")
+            elif(choice=='5'):
+                print("Exiting the Application")
+                write_to_JSON()
+    except Exception as ex:
+        logging.critical(ex)
+if __name__=="__main__":
+    main()
+
