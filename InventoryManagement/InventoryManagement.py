@@ -35,3 +35,11 @@ def load_JSON_to_dictionary():
     global inventoryDict
     with open(FILE_PATH_JSON,'+r') as file:
             inventoryDict=json.load(file)
+
+def write_inventoryDictionary_to_JSON():
+    try:
+        with open(FILE_PATH_JSON,'+r') as file:
+            file.write(json.dumps(inventoryDict,indent=4))
+    except Exception as ex:
+        logging.critical(ex)
+
