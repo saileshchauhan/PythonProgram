@@ -42,4 +42,21 @@ class Patient:
         self.MobileNumber=mobileNumber
         self.Age=int(age)
         pass
+recordDictionary={}
 
+def load_JSON_file():
+    '''
+    Description:
+        Method loads data from JSON using environment variable.
+        To recordDictionary variable.
+    Parameters:
+        No Parameters.
+    Return:
+        None.
+    '''
+    try:
+        global recordDictionary
+        with open(FILE_PATH_JSON,'+r') as file:
+            recordDictionary=json.load(file)
+    except Exception as ex:
+        logging.critical(ex)
