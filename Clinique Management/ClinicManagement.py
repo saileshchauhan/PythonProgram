@@ -100,3 +100,28 @@ def write_to_JSON():
     except Exception as ex:
         logging.critical(ex)
 
+def search_through_Dictionary(KEY,searchParameter,searchKeyword):
+    '''
+    Description:
+        Method supplements search_entry method. It provides code reusability
+        for search_entry method.
+    Parameters:
+        Takes 3 parameters KEY for accesing values. searchParameter contains 
+        entry value to be searched. searchKeyword provides entry key to be
+        searched.
+    Return:
+        None.
+    '''
+    try:
+        listDoctors=recordDictionary.get(KEY,"Invalid Search")
+        if(listDoctors=='Invalid Search'):
+            print(listDoctors)
+            quit
+        for entry in listDoctors:
+            for entryValue in entry.values():
+                doctorName=entryValue.get(searchKeyword)
+                if(doctorName==searchParameter):
+                    print("Search complete {} with ID {} ".format(doctorName,entryValue.get("Id")))
+    except Exception as ex:
+        logging.critical(ex)
+
