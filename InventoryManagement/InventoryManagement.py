@@ -49,3 +49,24 @@ def add_inventory(KEY):
         inventoryDict.setdefault(KEY,[]).append(inventory.__dict__)
     except Exception as ex:
         logging.critical(ex)
+
+def read_JSON_to_calculate_inventory_cost(KEY):
+    try:
+        totalInventoryWeight=0
+        totalInventoryCost=0
+        inventorylist=inventoryDict.get(KEY,"Not found")
+        if(inventorylist=='Not found'):
+            print(inventorylist)
+        for inventory in inventorylist:
+            inventoryName=inventory.get("name")
+            inventoryWeight=inventory.get("weight")
+            inventoryPricePerKg=inventory.get("pricePerKg")
+            totalInventoryWeight+=inventoryWeight
+            totalInventoryCost+=(inventoryWeight*inventoryPricePerKg)
+            print("Name of Inventory {0} weight {1} perKg price {2} ".format(inventoryName,inventoryWeight,inventoryPricePerKg))
+            print("Inventory Cost {0}  ".format(inventoryWeight*inventoryPricePerKg))
+            print("================================================================")
+        print("Name of Inventory {0} TotalWeight {1} TotalCost {2} ".format(KEY,totalInventoryWeight,totalInventoryCost))
+        print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+    except Exception as ex:
+        logging.critical(ex)
