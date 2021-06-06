@@ -84,3 +84,19 @@ def add_doctor_patient_entry(KEY):
     except Exception as ex:
         logging.critical(ex)
 
+def write_to_JSON():
+    '''
+    Description:
+        Method writes recordDictionary key value to JSON file.
+        Using JSON module.
+    Parameters:
+        No Parameters.
+    Return:
+        None.
+    '''
+    try:
+        with open(FILE_PATH_JSON,'+r') as file:
+            file.write(json.dumps(recordDictionary,indent=4))
+    except Exception as ex:
+        logging.critical(ex)
+
