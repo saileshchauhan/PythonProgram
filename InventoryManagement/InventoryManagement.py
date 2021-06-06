@@ -43,3 +43,9 @@ def write_inventoryDictionary_to_JSON():
     except Exception as ex:
         logging.critical(ex)
 
+def add_inventory(KEY):
+    try:
+        inventory=Inventory(input("Enter Name of {}\n".format(KEY)),float(input("Enter weight of {}\n".format(KEY))),float(input("Enter price per Kg\n")))
+        inventoryDict.setdefault(KEY,[]).append(inventory.__dict__)
+    except Exception as ex:
+        logging.critical(ex)
