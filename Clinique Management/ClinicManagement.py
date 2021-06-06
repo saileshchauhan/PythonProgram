@@ -125,3 +125,55 @@ def search_through_Dictionary(KEY,searchParameter,searchKeyword):
     except Exception as ex:
         logging.critical(ex)
 
+def search_entry(KEY):
+    '''
+    Description:
+        Method uses search_through_Dictionary method. It provides feature for
+        searching through DOCTOR and PATIENT records. This method provides 4 features.
+    Parameters:
+        Takes KEY as parameter to dictionary. To acess records.
+    Return:
+        None.
+    '''
+    try:
+        if(KEY=='DOCTOR'):
+            choice=''
+            while(choice!='4'):
+                print("1.Search By Name\n2.Search By Id\n3.Search By Specialization\n4.Stop Searching")
+                choice=input("Make your search selection\n")
+                if(choice=='1'):
+                    searchParameter=input("Enter Name of doctor\n")
+                    search_through_Dictionary(KEY,searchParameter,"Name")
+                elif(choice=='2'):
+                    searchParameter=input("Enter Id of doctor\n")
+                    list=recordDictionary.get(KEY)
+                    for entry in list:
+                        for key,value in entry.items():
+                            if(key==searchParameter):
+                                id=value.get("Id")
+                                print("Id of doctor {0}\nAll detail {1} ".format(id,value))
+                elif(choice=='3'):
+                    searchParameter=input("Enter Speciality\n")
+                    search_through_Dictionary(KEY,searchParameter,"Specialization")
+        elif(KEY=='PATIENT'):
+            choice=''
+            while(choice!='4'):
+                print("1.Search By Name\n2.Search By Id\n3.Search By MobileNumber\n4.Stop Searching")
+                choice=input("Make your search selection\n")
+                if(choice=='1'):
+                    searchParameter=input("Enter Name of Patient\n")
+                    search_through_Dictionary(KEY,searchParameter,"Name")
+                elif(choice=='2'):
+                    searchParameter=input("Enter Id of doctor\n")
+                    list=recordDictionary.get(KEY)
+                    for entry in list:
+                        for key,value in entry.items():
+                            if(key==searchParameter):
+                                id=value.get("Id")
+                                print("Id of Patient {0}\nAll detail {1} ".format(id,value))
+                elif(choice=='3'):
+                    searchParameter=input("Enter MobileNumber\n")
+                    search_through_Dictionary(KEY,searchParameter,"MobileNumber")
+    except Exception as ex:
+        logging.critical(ex)
+
