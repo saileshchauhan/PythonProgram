@@ -70,3 +70,29 @@ def read_JSON_to_calculate_inventory_cost(KEY):
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     except Exception as ex:
         logging.critical(ex)
+
+def main():
+    load_JSON_to_dictionary()
+    choice=''
+    while(choice!='5'):
+        print("1.Update WHEAT inventory\n2.Update PULSES inventory\n3.Print Inventory cost of WHEAT\n4.Print Inventory cost of PULSES\n5.Quit Program")
+        choice=input("Enter your choice")
+        if(choice=='1'):
+            print("You have choosen to Add new WHEAT inventory")
+            add_inventory("WHEAT")
+        elif(choice=='2'):
+            print("You have choosen to Add new PULSES inventory")
+            add_inventory("PULSES")
+        elif(choice=='3'):
+            print("You have choosen to Print Inventory Cost of WHEAT")
+            read_JSON_to_calculate_inventory_cost("WHEAT")
+        elif(choice=='4'):
+            print("You have choosen to Calculate Inventory Cost of PULSES")
+            read_JSON_to_calculate_inventory_cost("PULSES")
+        elif(choice=='5'):
+            print("Writing inventory to JSON file")
+            write_inventoryDictionary_to_JSON()
+            print("Exited From the program")
+
+if __name__=="__main__":
+    main()
