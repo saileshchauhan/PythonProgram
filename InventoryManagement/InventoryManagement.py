@@ -17,8 +17,8 @@ logging.basicConfig(filename=FILE_PATH_LOG,level=logging.CRITICAL,format='%(asct
 class Inventory:
     '''
     Description:
-        Name of class is Contact provides blue print to create custom object
-        with attributes firstName,lastName,city,contact
+        Name of class is Inventory provides blue print to create custom object
+        inventory with attributes Name,Weight,PricePerKg.
     Function:
         No Function.
     Variables:
@@ -29,3 +29,9 @@ class Inventory:
         self.weight=weight
         self.pricePerKg=pricePerKg
         pass
+
+inventoryDict={}
+def load_JSON_to_dictionary():
+    global inventoryDict
+    with open(FILE_PATH_JSON,'+r') as file:
+            inventoryDict=json.load(file)
