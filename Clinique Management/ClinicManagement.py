@@ -29,3 +29,17 @@ class Doctor:
         self.Specialization=specialization
         self.Availability=int(availability)
         pass
+class Patient:
+    '''
+    Description:
+        Creates Custom object with properties name,id,mobileNumber,age.
+    Properties:
+        Name,Id,MobileNumber,Age.
+    '''
+    def __init__(self,name,id,mobileNumber,age):
+        self.Name=name
+        self.Id=id
+        self.MobileNumber=mobileNumber
+        self.Age=int(age)
+        pass
+
