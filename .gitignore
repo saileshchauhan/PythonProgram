@@ -1,0 +1,2 @@
+#This git ignore file ignores .env files.
+*.env
