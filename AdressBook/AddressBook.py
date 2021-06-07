@@ -64,7 +64,31 @@ def updateContact():
     except Exception as ex:
         logging.critical(ex)
 
+def editContact():
+    '''
+    Description:
+        Allows user to correct already existing contact entry. In AdressBook.
+    Parameters:
+        No Parameters.
+    Return:
+    '''
+    try:
+        with open(FILE_NAME,'+r') as file:
+            alreadyExistingContact=json.load(file)
+            firstName=input("Enter first Name to edit")
+            for key,value in alreadyExistingContact.items():
+                if(key==firstName):
+                    print("Contact Found "+firstName)
+                    value["firstName"]=input("Enter correct Name\n")
+                    value["lastName"]=input("Enter correct lastName\n")
+                    value["city"]=input("Enter correct cityName\n")
+                    value["contact"]=input("Enter correct Contact\n")
+            file.seek(0)
+            json.dump(alreadyExistingContact,file,indent=4)
+            file.close()
 
+    except Exception as ex:
+        logging.critical(ex)
 def printContact():
     '''
     Description:
@@ -122,8 +146,10 @@ def main():
     '''
     try:
         choice=""
-        while(choice!='5'):
-            print("1.Add/Create Contact to AdressBook\n2.Update Contact to AddressBook\n3.Delete Contact from AddressBook\n4.Print All Contact in AddressBook\n5.Quit AdressBook")
+        while(choice!='6'):
+            print("1.Add/Create Contact to AdressBook\n2.Update Contact to AddressBook")
+            print("3.Delete Contact from AddressBook\n4.Print All Contact in AddressBook")
+            print("5.Edit AdressBook\n6.Exit AdressBook")
             choice=input("Select your option\n")
             if(choice=='1'):
                 addContact()
@@ -133,6 +159,8 @@ def main():
                 deleteContact()
             elif(choice=='4'):
                 printContact()
+            elif(choice=='5'):
+                editContact()
         print("Exited from AddressBook")
     except Exception as ex:
         logging.critical(ex)

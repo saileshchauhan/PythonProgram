@@ -1,14 +1,14 @@
 {
     "sam": {
-        "firstName": "sam",
+        "firstName": "samuel",
         "lastName": "obama",
-        "city": "amla",
-        "contact": "45677"
+        "city": "bhopal",
+        "contact": "345677878"
     },
     "john": {
-        "firstName": "john",
-        "lastName": "obama",
-        "city": "amla",
-        "contact": "456689"
+        "firstName": "JOHN",
+        "lastName": "OBAMA",
+        "city": "BHOPAL",
+        "contact": "34556677"
     }
 }
