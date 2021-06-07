@@ -23,11 +23,12 @@ class Doctor:
     Properties:
         Name,Id,Specialization,Availability
     '''
+    
     def __init__(self,name,id,specialization,availability):
         self.Name=name
         self.Id=id
         self.Specialization=specialization
-        self.Availability=int(availability)
+        self.Availability=availability
         pass
 class Patient:
     '''
@@ -43,6 +44,36 @@ class Patient:
         self.Age=int(age)
         pass
 recordDictionary={}
+
+def book_appointment_with_doctor(KEY):
+    '''
+    Description:
+        Method provides entry of Doctor available for booking.
+        It allows only booking for doctor upto 5 patient.
+        If patient entry exceeds more than 5.It do not allow.
+        Booking for that doctor.
+    Parameters:
+        Key for accesing the Doctor list inside recordDictionary.
+    Returns:
+        None. It prints return values provided better readibility.
+    '''
+    try:
+        list=recordDictionary.get(KEY)
+        for entry in list:
+            for key,value in entry.items():
+                if(len(value["Availability"])<6):
+                    print("Doctor Id {0} Specialization {1} is AVAILABLE in {2} ".format(key,value["Specialization"],value["Availability"][0]))
+        choosenDoctor=input("Enter Id of Doctor\n")
+        for entry in list:
+            for key,value in entry.items():
+                if(key==choosenDoctor and len(value["Availability"])<6):
+                    print("Doctor Found "+key)
+                    patientID=input("Provide Patient Id\n")
+                    availabilityList=value["Availability"]
+                    availabilityList.append(patientID)
+
+    except Exception as ex:
+        logging.critical(ex)
 
 def load_JSON_file():
     '''
@@ -75,6 +106,7 @@ def add_doctor_patient_entry(KEY):
         global recordDictionary
         if(KEY=='DOCTOR'):
             doctor=Doctor(input("Enter name of doctor\n"),input("Enter Id of doctor\n"),input("Enter Doctor Specialization\n"),input("Enter Doctor Availability\n"))
+            doctor.Availability=[doctor.Availability]
             doctorRecord={doctor.Id:doctor.__dict__}
             recordDictionary.setdefault(KEY,[]).append(doctorRecord)
         elif(KEY=='PATIENT'):
@@ -189,10 +221,10 @@ def main():
     try:
         load_JSON_file()
         choice=''
-        while(choice!='5'):
+        while(choice!='6'):
             print("1.Add New Doctor Entry\n2.Add New Patient Entry")
             print("3.Search Doctor by Id,Specialization,Name\n4.Search Patient by Id,Name,MobileNumber")
-            print("5.Exit the Application")
+            print("5.Book Appointment\n6.Exit the Application")
             choice=input("Make your selection\n")
             if(choice=='1'):
                 add_doctor_patient_entry("DOCTOR")
@@ -203,6 +235,8 @@ def main():
             elif(choice=='4'):
                 search_entry("PATIENT")
             elif(choice=='5'):
+                book_appointment_with_doctor("DOCTOR")
+            elif(choice=='6'):
                 print("Exiting the Application")
                 write_to_JSON()
     except Exception as ex:
