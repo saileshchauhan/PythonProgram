@@ -9,7 +9,7 @@ import json
 import logging
 from decouple import config 
 
-logging.basicConfig(filename='adresBook.log',level=logging.CRITICAL,format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='AppData/adresBook.log',level=logging.CRITICAL,format='%(asctime)s - %(levelname)s - %(message)s')
 FILE_NAME=config('File_Name')
 class Contact:
     '''

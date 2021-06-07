@@ -10,6 +10,14 @@ import unittest
 import AddressBook
 
 class Test_AddressBook(unittest.TestCase):
+    '''
+    Description:
+        Unit Test Class to complete testing of AddressBook 
+        methods.
+    TestMethods:
+        1. test_addContact.
+        2. test_verify_entries.
+    '''
 
     def test_addContact(self):
         '''
@@ -31,6 +39,7 @@ class Test_AddressBook(unittest.TestCase):
         if contactFirstName in addressBookDict:
             result=True
         assert result==True
+        
     def test_verify_entries(self):
         '''
         Description:
