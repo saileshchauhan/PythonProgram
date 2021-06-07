@@ -1,0 +1,20 @@
+{
+    "sandra": {
+        "firstName": "sandra",
+        "lastName": "obama",
+        "city": "amla",
+        "contact": "89785645"
+    },
+    "sam": {
+        "firstName": "samuel",
+        "lastName": "obama",
+        "city": "amla",
+        "contact": "45678899"
+    },
+    "Bill": {
+        "firstName": "Bill",
+        "lastName": "Obama",
+        "city": "amla",
+        "contact": "67890543"
+    }
+}
