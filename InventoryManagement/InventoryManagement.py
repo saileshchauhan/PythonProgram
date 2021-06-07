@@ -32,11 +32,31 @@ class Inventory:
 
 inventoryDict={}
 def load_JSON_to_dictionary():
-    global inventoryDict
-    with open(FILE_PATH_JSON,'+r') as file:
-            inventoryDict=json.load(file)
+    '''
+    Description:
+        Method loads all JSON from configured file Path into the 
+        Dictionary called inventoryDict. Make it available to other
+        methods.
+    Parameters:
+    Return:
+    '''
+    try:
+        global inventoryDict
+        with open(FILE_PATH_JSON,'+r') as file:
+                inventoryDict=json.load(file)
+    except Exception as ex:
+        logging.critical(ex)
 
 def write_inventoryDictionary_to_JSON():
+    '''
+    Description:
+        Method writes back inventory Dictionary which contains key value
+        pair as Inventory Id and Invenotyr Details.
+    Parameters:
+        No Parameters.
+    Return:
+        None.
+    '''
     try:
         with open(FILE_PATH_JSON,'+r') as file:
             file.write(json.dumps(inventoryDict,indent=4))
@@ -44,6 +64,16 @@ def write_inventoryDictionary_to_JSON():
         logging.critical(ex)
 
 def add_inventory(KEY):
+    '''
+    Description:
+        Method provides feature for adding new inventory to the 
+        user. The inventory could be wheat or pulses.
+    Parameters:
+        KEY it is the type of entry which user provides to
+        add inventory of that particular type.
+    Return:
+        None.
+    '''
     try:
         inventory=Inventory(input("Enter Name of {}\n".format(KEY)),float(input("Enter weight of {}\n".format(KEY))),float(input("Enter price per Kg\n")))
         inventoryDict.setdefault(KEY,[]).append(inventory.__dict__)
@@ -51,6 +81,15 @@ def add_inventory(KEY):
         logging.critical(ex)
 
 def read_JSON_to_calculate_inventory_cost(KEY):
+    '''
+    Description:
+        Method reads through JSON dictionary to print cost of Inventory
+        and total cost of Inventory with total Weight.
+    Parameters:
+        No parameters.
+    Return:
+        None.
+    '''
     try:
         totalInventoryWeight=0
         totalInventoryCost=0
@@ -72,27 +111,38 @@ def read_JSON_to_calculate_inventory_cost(KEY):
         logging.critical(ex)
 
 def main():
-    load_JSON_to_dictionary()
-    choice=''
-    while(choice!='5'):
-        print("1.Update WHEAT inventory\n2.Update PULSES inventory\n3.Print Inventory cost of WHEAT\n4.Print Inventory cost of PULSES\n5.Quit Program")
-        choice=input("Enter your choice")
-        if(choice=='1'):
-            print("You have choosen to Add new WHEAT inventory")
-            add_inventory("WHEAT")
-        elif(choice=='2'):
-            print("You have choosen to Add new PULSES inventory")
-            add_inventory("PULSES")
-        elif(choice=='3'):
-            print("You have choosen to Print Inventory Cost of WHEAT")
-            read_JSON_to_calculate_inventory_cost("WHEAT")
-        elif(choice=='4'):
-            print("You have choosen to Calculate Inventory Cost of PULSES")
-            read_JSON_to_calculate_inventory_cost("PULSES")
-        elif(choice=='5'):
-            print("Writing inventory to JSON file")
-            write_inventoryDictionary_to_JSON()
-            print("Exited From the program")
-
+    '''
+    Description:
+        Method calls all other feature method. To provide required feature
+        to the user.
+    Parameters:
+        No Parameters.
+    Return:
+        None.
+    '''
+    try:
+        load_JSON_to_dictionary()
+        choice=''
+        while(choice!='5'):
+            print("1.Update WHEAT inventory\n2.Update PULSES inventory\n3.Print Inventory cost of WHEAT\n4.Print Inventory cost of PULSES\n5.Quit Program")
+            choice=input("Enter your choice")
+            if(choice=='1'):
+                print("You have choosen to Add new WHEAT inventory")
+                add_inventory("WHEAT")
+            elif(choice=='2'):
+                print("You have choosen to Add new PULSES inventory")
+                add_inventory("PULSES")
+            elif(choice=='3'):
+                print("You have choosen to Print Inventory Cost of WHEAT")
+                read_JSON_to_calculate_inventory_cost("WHEAT")
+            elif(choice=='4'):
+                print("You have choosen to Calculate Inventory Cost of PULSES")
+                read_JSON_to_calculate_inventory_cost("PULSES")
+            elif(choice=='5'):
+                print("Writing inventory to JSON file")
+                write_inventoryDictionary_to_JSON()
+                print("Exited From the program")
+    except Exception as ex:
+        logging.critical(ex)
 if __name__=="__main__":
     main()
