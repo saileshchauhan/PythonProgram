@@ -1,27 +1,34 @@
 {
     "DOCTOR": [
         {
-            "1_doctor": {
-                "Name": "sam",
-                "Id": "1_doctor",
+            "6_doctor": {
+                "Name": "mahesh",
+                "Id": "6_doctor",
                 "Specialization": "ortho",
-                "Availability": 0
+                "Availability": [
+                    "AM"
+                ]
             }
         },
         {
-            "2_doctor": {
-                "Name": "john",
-                "Id": "2_doctor",
-                "Specialization": "surgeon",
-                "Availability": 0
+            "7_rajesh": {
+                "Name": "rajesh",
+                "Id": "7_rajesh",
+                "Specialization": "skin",
+                "Availability": [
+                    "AM",
+                    "4_patient"
+                ]
             }
         },
         {
-            "3_doctor": {
-                "Name": "mike",
-                "Id": "3_doctor",
-                "Specialization": "ortho",
-                "Availability": 0
+            "8_doctor": {
+                "Name": "santosh",
+                "Id": "8_doctor",
+                "Specialization": "skin",
+                "Availability": [
+                    "AM"
+                ]
             }
         }
     ],
