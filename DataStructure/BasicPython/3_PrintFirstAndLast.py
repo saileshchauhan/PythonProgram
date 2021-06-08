@@ -3,7 +3,7 @@
 @Date:2021-06-08
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-08
-@Title:Reverse user firstName and LastName.
+@Title:Print first and Last Index of List.
 '''
 
 import logging,re

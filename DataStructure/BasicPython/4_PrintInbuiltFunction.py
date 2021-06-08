@@ -6,7 +6,7 @@
 @Title: Print Definition of Inbuilt Function.
 '''
 
-import logging,re
+import logging
 from decouple import config
 
 FILE_NAME=config('Log_File_Path')
