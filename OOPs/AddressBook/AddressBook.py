@@ -9,7 +9,7 @@ import json
 import logging
 from decouple import config 
 
-logging.basicConfig(filename='AppData/adresBook.log',level=logging.CRITICAL,format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='AppData/addresBook.log',level=logging.CRITICAL,format='%(asctime)s - %(levelname)s - %(message)s')
 FILE_NAME=config('File_Name')
 class Contact:
     '''
@@ -42,8 +42,8 @@ def addContact():
         return [contact,addressBookDict]
         #For unit testing used return. To use application please
         #remove return line and uncomment line 45 and 46.
-        # with open(FILE_NAME,'w') as file:
-        #     file.write(json.dumps(addressBookDict,indent=4))
+        with open(FILE_NAME,'w') as file:
+            file.write(json.dumps(addressBookDict,indent=4))
     except Exception as ex:
         logging.critical(ex)
 
