@@ -57,5 +57,21 @@ class Test_AddressBook(unittest.TestCase):
         #Test Body
         assert addressBookDict[contactFirstNameAsKey]==contact.__dict__
 
+    def test_verify_entry_deletes(self):
+        '''
+        Description:
+            This method asserts if deleted contact has been removed.
+            From the AddressBook. IF removed than asserts true.
+        Parameters:
+            self
+        Return:
+            None.
+        '''
+        listReturn=AddressBook.deleteContact()
+        entryToDelete=listReturn[0]
+        addressBookDict=listReturn[1]
+        check=addressBookDict.get(entryToDelete,"not found")
+        assert check=="not found"
+        
 if __name__=="__main__":
     unittest.main()
