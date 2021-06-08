@@ -10,7 +10,7 @@ import logging,re
 from decouple import config
 
 FILE_NAME=config('Log_File_Path')
-logging.basicConfig(filename='AppData\basicpython.log',level=logging.CRITICAL,format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename=FILE_NAME,level=logging.CRITICAL,format='%(asctime)s - %(levelname)s - %(message)s')
 
 def reverse_username_lastname(userFirstName,userLastName):
     '''
@@ -42,3 +42,6 @@ def validation(stringValue):
         print("Invalid Input")
     except Exception as ex:
         logging.critical(ex)
+
+returnList=reverse_username_lastname(userFirstName=validation(input("Enter your first Name\n")),userLastName=validation(input("Enter your last Name\n")))
+print("User First Name in reverse {0} Last Name in reverse {1} ".format(returnList[0],returnList[1]))
