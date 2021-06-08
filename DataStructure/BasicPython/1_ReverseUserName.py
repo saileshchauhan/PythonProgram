@@ -24,7 +24,7 @@ def reverse_username_lastname(userFirstName,userLastName):
     try:
         return [userFirstName[::-1],userLastName[::-1]]
     except Exception as ex:
-        print(ex)
+        logging.critical(ex)
 
 def validation(stringValue):
     '''
@@ -40,6 +40,7 @@ def validation(stringValue):
         if(re.match(regexName,stringValue)):
             return stringValue
         print("Invalid Input")
+        quit()
     except Exception as ex:
         logging.critical(ex)
 
