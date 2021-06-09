@@ -3,7 +3,7 @@
 @Date:2021-06-08
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-09
-@Title: 
+@Title: Remove Selected Items.
 '''
 
 #Importing logConfig for error logging
