@@ -1,0 +1,5 @@
+2021-06-08 17:53:40,242 - CRITICAL - list index out of range
+2021-06-08 21:23:05,187 - CRITICAL - list indices must be integers or slices, not str
+2021-06-08 21:24:12,882 - CRITICAL - list indices must be integers or slices, not str
+2021-06-09 11:43:42,381 - CRITICAL - Testing Log File
+2021-06-09 18:58:38,624 - CRITICAL - Testing configuartion For log config

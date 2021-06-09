@@ -1,2 +1,3 @@
 #This git ignore file ignores .env files.
 *.env
+*__pycache__

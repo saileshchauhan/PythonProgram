@@ -2,7 +2,7 @@
 @Author:Sailesh Chauhan
 @Date:2021-06-08
 @Last Modified by:Sailesh Chauhan
-@Last Modified time:2021-06-08
+@Last Modified time:2021-06-09
 @Title: Number of occurence of specified element in Array.
 '''
 
