@@ -20,18 +20,30 @@ def user_input_to_array():
     '''
     array=[]
     choice=''
-    print("Ener any number of values")
+    print("Ener any number of values to enter in array")
     while(choice.lower()!='q'):
         userValue=input("Enter value\n")
         array.append(userValue)
-        print("Do you want to add more values \nPress C to continue\nQ to stop")
-        choice=input("Enter choice")
+        print("Do you want to add more values \nPress C to continue\nQ to stop\n")
+        choice=input("Enter choice\n")
     return array
 
-def print_list(list):
+def occurence_of_specific_element_array(list,userSelection):
     '''
+    Description:
+    Parameters:
+    Returns:
     '''
-    print(list)
+    count=0
+    for index in range(len(list)-1):
+        if(list[index]==userSelection):
+            count+=1
+    return userSelection,count+1
 
-print_list(list=user_input_to_array())
+list=user_input_to_array()
+print(list)
+userSelection=input("Select Element to count its occurence in list\n")
 
+returnList=occurence_of_specific_element_array(list,userSelection)
+
+print("Selected element %s Occurence count %s " %(returnList[0],returnList[1]))
