@@ -3,3 +3,6 @@
 2021-06-08 21:24:12,882 - CRITICAL - list indices must be integers or slices, not str
 2021-06-09 11:43:42,381 - CRITICAL - Testing Log File
 2021-06-09 18:58:38,624 - CRITICAL - Testing configuartion For log config
+2021-06-09 19:51:27,116 - CRITICAL - 'dict' object has no attribute 'add'
+2021-06-09 19:51:56,517 - CRITICAL - 'dict' object has no attribute 'add'
+2021-06-09 19:54:17,844 - CRITICAL - 'dict' object has no attribute 'add'
