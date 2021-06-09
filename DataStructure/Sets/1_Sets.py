@@ -6,7 +6,7 @@
 @Title: Create set
 '''
 
-#Importing From LogConfig logging config
+#Importing logConfig for error logging
 import logconfig
 import logging
 
@@ -25,12 +25,21 @@ def create_set():
             defaultSet.add(userValue)
             print("Do you want to add more values \nPress C to continue\nQ to stop\n")
             choice=input("Enter choice\n")
-        return set
+        return defaultSet
     except Exception as ex:
-        logging.critical(ex)
-
-print_set()
+        logging.error(ex)
 
 
+def iterate_set(set=create_set()):
+    '''
+    Description:
+    Parameters:
+    Returns:
+    '''
+    try:
+        for eachSetItem in set:
+            print(eachSetItem)
+    except Exception as ex:
+        logging.error(ex)
 
-
+iterate_set()
