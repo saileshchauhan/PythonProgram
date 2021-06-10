@@ -2,12 +2,12 @@
 @Author:Sailesh Chauhan
 @Date:2021-06-09
 @Last Modified by:Sailesh Chauhan
-@Last Modified time:2021-06-09
+@Last Modified time:2021-06-10
 @Title: Sum, Multiply and find min of elements in list.
 '''
 
 #Importing logConfig for error logging
-from typing import FrozenSet
+
 import logconfig
 import logging,re
 
