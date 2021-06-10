@@ -12,11 +12,7 @@ import logconfig
 import logging,re
 
 def create_list():
-    '''
-    Description:
-    Parameters:
-    Returns:
-    '''
+    
     try:
         defaultList=[]
         choice=''
@@ -46,3 +42,19 @@ def validation(stringValue):
         print("Invalid Input")
     except Exception as ex:
         logging.critical(ex)
+    
+def find_firstAndLast_same(list,size):
+    '''
+    Description:
+    Parameters:
+    Returns:
+    '''
+    try:
+        count=0
+        for element in range(size):
+            if(len(element)>2 and element[0]==element[len(element)-1]):
+                count+=1
+        return count
+    except Exception as ex:
+        logging.error(ex)
+
