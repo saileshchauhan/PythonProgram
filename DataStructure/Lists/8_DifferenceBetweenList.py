@@ -3,7 +3,7 @@
 @Date:2021-06-10
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-10
-@Title: Find out common item in both list.
+@Title: Find out differnce between two list.
 '''
 
 #Importing logConfig for error logging
@@ -47,7 +47,8 @@ def validation(stringValue):
     except Exception as ex:
         logging.critical(ex)
 
-setOne=set(create_list())
-setTwo=set(create_list())
+setOne=create_list()
+print("Enter Value for Set two")
+setTwo=create_list()
 
 print("Differnce Between Lists ",list(setOne.symmetric_difference(setTwo)))
