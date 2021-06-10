@@ -1,9 +1,10 @@
 '''
 @Author:Sailesh Chauhan
-@Date:2021-06-09
+@Date:2021-06-10
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-10
-@Title: Sum, Multiply and find min of elements in list.
+@Title: Count string with two or more character and same character at first
+        and last of the string.
 '''
 
 #Importing logConfig for error logging

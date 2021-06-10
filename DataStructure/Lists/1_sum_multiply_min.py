@@ -1,6 +1,6 @@
 '''
 @Author:Sailesh Chauhan
-@Date:2021-06-09
+@Date:2021-06-10
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-10
 @Title: Sum, Multiply and find min of elements in list.
