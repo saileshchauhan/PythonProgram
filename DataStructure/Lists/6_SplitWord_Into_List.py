@@ -3,7 +3,7 @@
 @Date:2021-06-09
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-09
-@Title: Create, Clear, frozen Set function in Sets.
+@Title: Split word into list.
 '''
 
 import logconfig,logging,re
