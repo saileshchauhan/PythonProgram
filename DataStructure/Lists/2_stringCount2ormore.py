@@ -12,7 +12,11 @@ import logconfig
 import logging,re
 
 def create_list():
-    
+    '''
+    Description:
+    Parameters:
+    Returns:
+    '''
     try:
         defaultList=[]
         choice=''
@@ -43,18 +47,23 @@ def validation(stringValue):
     except Exception as ex:
         logging.critical(ex)
     
-def find_firstAndLast_same(list,size):
+def find_firstAndLast_same(list):
     '''
     Description:
     Parameters:
     Returns:
     '''
     try:
+        newList=[]
         count=0
-        for element in range(size):
+        for element in list:
             if(len(element)>2 and element[0]==element[len(element)-1]):
                 count+=1
-        return count
+                newList.append(element)
+        return count,newList
     except Exception as ex:
         logging.error(ex)
 
+list=create_list()
+returnList=find_firstAndLast_same(list)
+print("The count is %s of elements with 2 or more character and same first and last character %s "%(returnList[0],returnList[1]))
