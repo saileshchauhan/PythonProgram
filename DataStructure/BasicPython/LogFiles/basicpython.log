@@ -1,3 +1,0 @@
-2021-06-08 17:53:40,242 - CRITICAL - list index out of range
-2021-06-08 21:23:05,187 - CRITICAL - list indices must be integers or slices, not str
-2021-06-08 21:24:12,882 - CRITICAL - list indices must be integers or slices, not str
