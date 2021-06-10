@@ -53,4 +53,7 @@ def deep_copy_list(list):
         return deepCopy
     except Exception as ex:
         logging.critical(ex)
-        
+
+list=create_list()
+print("New copy of list using For Loop ",copy_list(list))
+print("New copy of list using Deep Copy method of Copy module ",deep_copy_list(list))
