@@ -57,3 +57,30 @@ def deep_copy_list(list):
 list=create_list()
 print("New copy of list using For Loop ",copy_list(list))
 print("New copy of list using Deep Copy method of Copy module ",deep_copy_list(list))
+
+def remove_duplicates(list):
+    '''
+    Description:
+    Parameters:
+    Returns:
+    '''
+    try:
+        index=0
+        end=len(list)
+        while(index<end):
+            count=index+1
+            while(count<end):
+                if(list[index]==list[count]):
+                    list.remove(list[index])
+                    end-=1
+                    count-=1
+                count+=1
+            index+=1 
+        return list
+    except Exception as ex:
+        logging.critical(ex)
+
+noDuplicateList=remove_duplicates(list)
+print("List after removing elements ",noDuplicateList)
+
+
