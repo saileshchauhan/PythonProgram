@@ -3,11 +3,11 @@
 @Date:2021-06-10
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-10
-@Title: Copy list and remove duplicate element from list.
+@Title: Make list of new words greater than given size.
 '''
 
 import logconfig
-import logging
+import logging,re
 
 def create_list():
     '''
@@ -28,6 +28,23 @@ def create_list():
     except Exception as ex:
         logging.error(ex)
 
+def validation(stringValue):
+    '''
+    Description:
+        Provides validation for userinput.
+    Parameters:
+        stringValue it is userinput.
+    Returns:
+        correctString after converting it to int validation.
+    '''
+    try:
+        regexName="^[0-9]{1,}$"
+        if(re.match(regexName,stringValue)):
+            return int(stringValue)
+        print("Invalid Input")
+    except Exception as ex:
+        logging.critical(ex)
+
 def long_word_than_given_length(list,size):
     '''
     Description:
@@ -42,3 +59,8 @@ def long_word_than_given_length(list,size):
         return newList
     except Exception as ex:
         logging.critical(ex)
+
+list=create_list()
+userSize=validation(input("Enter length of word to make List "))
+newList=long_word_than_given_length(list,userSize)
+print("List of words %s greater than %s "%(newList,userSize))
