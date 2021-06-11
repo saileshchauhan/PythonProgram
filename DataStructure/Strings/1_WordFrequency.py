@@ -10,14 +10,14 @@
 import logconfig
 import logging,re
 
-def create_list():
+def create_word():
     '''
     Description:
     Parameters:
     Returns:
     '''
     try:
-        userValue=validation(input("You can enter any word"))
+        userValue=validation(input("You can enter any word\n"))
         return userValue   
     except Exception as ex:
         logging.error(ex)
@@ -32,7 +32,7 @@ def validation(stringValue):
         correctString after validation.
     '''
     try:
-        regexName="^[a-zA-Z0-9]{3,}$"
+        regexName="^[a-zA-Z0-9.]{3,}[a-zA-Z]+$"
         if(re.match(regexName,stringValue)):
             return stringValue
         print("String Lenght must be more than 3")
@@ -46,9 +46,9 @@ def char_frequency(word):
     Returns:
     '''
     try:
-        count=0
         charFrequency={}
         for char in word:
+            count=0
             for index in range(len(word)):
                 if(char==word[index]):
                     count+=1
@@ -63,3 +63,14 @@ def char_replacement(word):
     Parameters:
     Returns:
     '''
+    try:
+        char = word[0]
+        word = word.replace(char, '$')
+        word = char + word[1:]
+        return word
+    except Exception as ex:
+        logging.critical(ex)
+
+word=create_word()
+print(char_replacement(word))
+print("word frequency dictionary",char_frequency(word))
