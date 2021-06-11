@@ -40,6 +40,19 @@ def validation(stringValue):
     except Exception as ex:
         logging.critical(ex)
 
+def remove_key(key,dict1):
+    '''
+    Description:
+    Parameters:
+    Returns:
+    '''
+    try:
+        del dict1[key]
+        return dict1
+    except Exception as ex:
+        logging.critical(ex)
+
 usrInput=validation(input("Enter N for key value in dictionary\n"))
 dict=key_N_value_N_sqre(usrInput)
-print(dict)
+dict1=remove_key(usrInput,dict)
+print(dict1)
