@@ -39,10 +39,10 @@ def validation(stringValue):
         regexName="^[a-zA-z]{3,}$"
         if(re.match(regexName,stringValue)):
             return stringValue
-        print("Invalid Input")
+        logging.debug("Invalid Input")
         quit()
     except Exception as ex:
         logging.critical(ex)
 
 returnList=reverse_username_lastname(userFirstName=validation(input("Enter your first Name\n")),userLastName=validation(input("Enter your last Name\n")))
-print("User First Name in reverse {0} Last Name in reverse {1} ".format(returnList[0],returnList[1]))
+logging.debug("User First Name in reverse {0} Last Name in reverse {1} ".format(returnList[0],returnList[1]))

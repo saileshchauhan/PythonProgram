@@ -43,7 +43,7 @@ def validation(stringValue):
         regexName="^[a-zA-Z0-9]{1,}$"
         if(re.match(regexName,stringValue)):
             return stringValue
-        print("Invalid Input")
+        logging.debug("Invalid Input")
     except Exception as ex:
         logging.critical(ex)
 
