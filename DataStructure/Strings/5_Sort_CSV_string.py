@@ -11,7 +11,7 @@
 import logconfig
 import logging,re
 
-def create_word():
+def create_string():
     '''
     Description:
     Parameters:
@@ -36,21 +36,8 @@ def validation(stringValue):
         regexName="^[a-zA-Z0-9,.]{3,}[a-zA-Z]+$"
         if(re.match(regexName,stringValue)):
             return stringValue
-        logging.debug("String Lenght must be more than 3")
+        print("String Lenght must be more than 3")
     except Exception as ex:
         logging.critical(ex)
 
-def lowercase_uppercase(word):
-    '''
-    Description:
-    Parameters:
-    Returns:
-    '''
-    try:
-        logging.debug("User Input in Upper Case %s",word.upper())
-        logging.debug("User Input in Upper Case %s",word.lower())
-    except Exception as ex:
-        logging.critical(ex) 
-
-word=create_word()
-lowercase_uppercase(word)
+print(create_string())
