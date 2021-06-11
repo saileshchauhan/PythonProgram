@@ -53,3 +53,5 @@ def char_frequency(word):
                 if(char==word[index]):
                     count+=1
             charFrequency.update({char:count})
+    except Exception as ex:
+        logging.critical(ex)
