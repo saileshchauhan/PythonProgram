@@ -3,7 +3,7 @@
 @Date:2021-06-11
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-11
-@Title: Take N as key and N*N as value.
+@Title: Take N as key and N*N as value and remove key.
 '''
 
 import logging,logconfig,re
