@@ -3,7 +3,7 @@
 @Date:2021-06-12
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-12
-@Title: Convert list to tuple 
+@Title: Convert list to tuple and unpack the tuple in variable and list.
 '''
 
 #Importing logConfig for error logging
