@@ -43,7 +43,7 @@ def validation(stringValue):
         regexName="^[0-9a-zA-Z]{1,}$"
         if(re.match(regexName,stringValue)):
             return (stringValue)
-        logging.debug("Invalid Input")
+        print("Invalid Input")
     except Exception as ex:
         logging.critical(ex)
 
@@ -60,7 +60,7 @@ def atleast_one_common(list1,list2):
         for item in list1:
             for element in list2:
                 if(item==element):
-                    logging.debug(item)
+                    print(item)
                     return True
     except Exception as ex:
         logging.critical(ex)

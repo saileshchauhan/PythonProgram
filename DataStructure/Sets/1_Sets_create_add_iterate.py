@@ -38,7 +38,7 @@ def iterate_set(set=create_set()):
     '''
     try:
         for eachSetItem in set:
-            logging.debug(eachSetItem)
+            print(eachSetItem)
     except Exception as ex:
         logging.error(ex)
 
