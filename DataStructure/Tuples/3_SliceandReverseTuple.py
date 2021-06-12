@@ -3,14 +3,15 @@
 @Date:2021-06-12
 @Last Modified by:Sailesh Chauhan
 @Last Modified time:2021-06-12
-@Title: Convert list to tuple and unpack the tuple in variable and list.
+@Title: Slice and Reverse The Tuple.
 '''
 
 #Importing logConfig for error logging
+from typing import DefaultDict
 from Tuples import logconfig
 import logging
 
-def create_list():
+def create_tuple():
     '''
     Description:
     Parameters:
@@ -29,22 +30,15 @@ def create_list():
     except Exception as ex:
         logging.error(ex)
 
-newList=create_list()
-newTuple=tuple(newList)
-
-def remove(tupleParameter,item):
+def reverese(tupleParameter):
     '''
     Description:
     Parameters:
     Returns:
     '''
     try:
-        newList=list(tupleParameter)
-        newList.remove(item)
-        return tuple(newList)
+        defaultlist=list(tupleParameter)
+        reverseList=defaultlist[::-1]
+        return tuple(reverseList)
     except Exception as ex:
         logging.critical(ex)
-
-print(newTuple)
-newTupleAfterRemove=remove(newTuple,'a')
-print(newTupleAfterRemove)
