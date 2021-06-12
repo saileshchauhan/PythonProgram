@@ -42,3 +42,20 @@ def reverese(tupleParameter):
         return tuple(reverseList)
     except Exception as ex:
         logging.critical(ex)
+
+def slice_tuple(tupleParameter,n):
+    '''
+    Description:
+    Parameters:
+    Returns:
+    '''
+    try:
+        defaultlist=list(tupleParameter)
+        sliceList=defaultlist[n:n+2]
+        return tuple(sliceList)
+    except Exception as ex:
+        logging.critical(ex)
+
+newTuple=create_tuple()
+print("Tuple after reversing %s"%reverese(newTuple))
+print("Tuple after slicing first two elements %s"%slice_tuple(newTuple,0))
