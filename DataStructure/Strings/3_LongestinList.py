@@ -47,7 +47,7 @@ def validation(stringValue):
     except Exception as ex:
         logging.critical(ex)
 
-def longest_word_list(list):
+def longest_word_list(list1):
     '''
     Description:
     Parameters:
@@ -55,26 +55,26 @@ def longest_word_list(list):
     '''
     try:
         longestWord=''
-        for index in range(len(list)):
-            if(len(longestWord)<len(list[index])):
-                longestWord=list[index]
+        for index in range(len(list1)):
+            if(len(longestWord)<len(list1[index])):
+                longestWord=list1[index]
         return longestWord
     except Exception as ex:
         logging.critical(ex)
 
-def longest_word_list(list):
+def longest_word_list_another(list2):
     '''
     Description:
     Parameters:
     Returns:
     '''
     try:
-        list.sort()
-        return list[len(list)-1],len(list[len(list)-1])
+        list2.sort()
+        return list2[len(list2)-1],len(list2[len(list2)-1])
     except Exception as ex:
         logging.critical(ex)
 
 
-list=create_list()
-print(longest_word_list(['choice','456','right']))
-print(longest_word_list(['1','345','choice']))
+listParameter=create_list()
+print(longest_word_list(listParameter))
+print(longest_word_list_another(listParameter))

@@ -25,8 +25,8 @@ def count_values(listDictionary):
     except Exception as ex:
         logging.critical(ex)
 
-countTrue=count_values([{'id': 1, 'success': True, 'name': 'Lary'},{'id': 2, 'success':False, 'name': 'Rabi'},{'id': 3, 'success': True, 'name': 'Alex'}])
-print(countTrue)
+# countTrue=count_values([{'id': 1, 'success': True, 'name': 'Lary'},{'id': 2, 'success':False, 'name': 'Rabi'},{'id': 3, 'success': True, 'name': 'Alex'}])
+# print(countTrue)
 
 #Solving same problem using List Comprehension.
 
