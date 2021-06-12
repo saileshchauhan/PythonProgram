@@ -30,5 +30,21 @@ def create_list():
         logging.error(ex)
 
 newList=create_list()
+newTuple=tuple(newList)
 
+def remove(tupleParameter,item):
+    '''
+    Description:
+    Parameters:
+    Returns:
+    '''
+    try:
+        newList=list(tupleParameter)
+        newList.remove(item)
+        return tuple(newList)
+    except Exception as ex:
+        logging.critical(ex)
 
+print(newTuple)
+newTupleAfterRemove=remove(newTuple,'a')
+print(newTupleAfterRemove)
