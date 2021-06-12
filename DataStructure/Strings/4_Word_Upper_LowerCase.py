@@ -1,17 +1,17 @@
 '''
 @Author:Sailesh Chauhan
-@Date:2021-06-12
+@Date:2021-06-11
 @Last Modified by:Sailesh Chauhan
-@Last Modified time:2021-06-12
-@Title: Covert word to key value pair in Dictionary. With each alphabet count as
-        value.
+@Last Modified time:2021-06-11
+@Title: Print Input from user in uppercase and lower.
 '''
 
 #Importing logConfig for error logging
+
 import logconfig
 import logging,re
 
-def create_string():
+def create_word():
     '''
     Description:
     Parameters:
@@ -40,22 +40,17 @@ def validation(stringValue):
     except Exception as ex:
         logging.critical(ex)
 
-def char_frequency(word):
+def lowercase_uppercase(word):
     '''
     Description:
     Parameters:
     Returns:
     '''
     try:
-        charFrequency={}
-        for char in word:
-            count=0
-            for index in range(len(word)):
-                if(char==word[index]):
-                    count+=1
-            charFrequency.update({char:count})
-        return charFrequency
+        logging.debug("User Input in Upper Case %s",word.upper())
+        logging.debug("User Input in Upper Case %s",word.lower())
     except Exception as ex:
-        logging.critical(ex)
+        logging.critical(ex) 
 
-print(char_frequency(create_string()))
+word=create_word()
+lowercase_uppercase(word)
