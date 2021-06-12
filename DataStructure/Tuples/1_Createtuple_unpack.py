@@ -28,3 +28,8 @@ def create_list():
         return defaultList
     except Exception as ex:
         logging.error(ex)
+
+newList=create_list()
+print(tuple(newList))
+firstValue,secondValue,*remaining=tuple(newList)
+print("first value %s and second value %s remaining value %s "%(firstValue,secondValue,remaining))
