@@ -40,5 +40,15 @@ class RegexPattern:
         except Exception as ex:
             logging.critical(ex)
 
+    def validate_mobileNumber(self,lastName,regex_mobileNumber="^[+][0-9]{1,3}[ ][1-9]{1}[0-9]{9}$"):
+        '''
+        Description:
+        Parameters:
+        Returns:
+        '''
+        try:
+            return re.match(lastName,regex_mobileNumber)
+        except Exception as ex:
+            logging.critical(ex)
     pass
 
