@@ -7,7 +7,7 @@
 '''
 
 from UserRegistartion import logConfig
-import re
+import re,logging
 
 class RegexPattern:
 
@@ -18,7 +18,27 @@ class RegexPattern:
     
     REGEX_PINCODE = "^[1-9]{1}[0-9]{2,2}[ ]?[0-9]{3}$"
 
-    def ValidateFirstName(self,firstName,REGEX_FIRSTNAME = "^[A-Z]{1}[a-z]{2,}$"):
-        return re.IsMatch(firstName, REGEX_FIRSTNAME)
+    def validate_firstName(self,firstName,regex_firstName = "^[A-Z]{1}[a-z]{2,}$"):
+        '''
+        Description:
+        Parameters:
+        Returns:
+        '''
+        try:
+            return re.match(firstName, regex_firstName)
+        except Exception as ex:
+            logging.critical(ex)
+    
+    def validate_lastName(self,lastName,regex_lastName="^[A-Z]{1}[a-z]{2,}$"):
+        '''
+        Description:
+        Parameters:
+        Returns:
+        '''
+        try:
+            return re.match(lastName,regex_lastName)
+        except Exception as ex:
+            logging.critical(ex)
+
     pass
 
