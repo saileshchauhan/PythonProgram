@@ -6,7 +6,7 @@
 @Title: User Registration.
 '''
 
-from UserRegistartion import logConfig
+#import logConfig
 import re,logging
 
 class RegexPattern:
@@ -14,18 +14,18 @@ class RegexPattern:
     REGEX_PASSWORD = "^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$"
     
     REGEX_EMAIL = "^[a-z0-9A-Z]+([./*$#%][a-zA-Z0-9]{1,})?[@][a-zA-Z]{2,}[.][a-zA-Z]{2,}([.][a-zA-Z]{2})?$"
-    
-    
-    REGEX_PINCODE = "^[1-9]{1}[0-9]{2,2}[ ]?[0-9]{3}$"
 
-    def validate_firstName(self,firstName,regex_firstName = "^[A-Z]{1}[a-z]{2,}$"):
+
+    def validate_firstName(self,firstName):
         '''
         Description:
         Parameters:
         Returns:
         '''
         try:
-            return re.match(firstName, regex_firstName)
+            regex_firstName = "^[A-Z]{1}[a-z]{2,}$"
+            if(re.match(regex_firstName,firstName)):
+                return True
         except Exception as ex:
             logging.critical(ex)
     
@@ -36,7 +36,8 @@ class RegexPattern:
         Returns:
         '''
         try:
-            return re.match(lastName,regex_lastName)
+            if(re.match(regex_lastName,lastName)):
+                return True
         except Exception as ex:
             logging.critical(ex)
 
@@ -72,6 +73,7 @@ class RegexPattern:
             return not re.match(password,regex_password)
         except Exception as ex:
             logging.critical(ex)
-
         pass
 
+# regex=RegexPattern()
+# print(regex.validate_firstName("sailesh"))
