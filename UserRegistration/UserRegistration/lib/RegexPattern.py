@@ -61,5 +61,17 @@ class RegexPattern:
             return re.match(pincode,regex_pincode)
         except Exception as ex:
             logging.critical(ex)
+    
+    def validate_password(self,password,regex_password="^[1-9]{1}[0-9]{2,2}[ ]?[0-9]{3}$"):
+        '''
+        Description:
+        Parameters:
+        Returns:
+        '''
+        try:
+            return not re.match(password,regex_password)
+        except Exception as ex:
+            logging.critical(ex)
+
         pass
 
