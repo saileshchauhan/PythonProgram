@@ -12,9 +12,9 @@ import re,logging
 class RegexPattern:
 
     REGEX_PASSWORD = "^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$"
-    REGEX_MOBILE="^[+][0-9]{1,3}[ ][1-9]{1}[0-9]{9}$"
+    
     REGEX_EMAIL = "^[a-z0-9A-Z]+([./*$#%][a-zA-Z0-9]{1,})?[@][a-zA-Z]{2,}[.][a-zA-Z]{2,}([.][a-zA-Z]{2})?$"
-    REGEX_LASTNAME = "^[A-Z]{1}[a-z]{2,}$"
+    
     
     REGEX_PINCODE = "^[1-9]{1}[0-9]{2,2}[ ]?[0-9]{3}$"
 
@@ -50,5 +50,16 @@ class RegexPattern:
             return re.match(lastName,regex_mobileNumber)
         except Exception as ex:
             logging.critical(ex)
-    pass
+    
+    def validate_pincode(self,pincode,regex_pincode="^[1-9]{1}[0-9]{2,2}[ ]?[0-9]{3}$"):
+        '''
+        Description:
+        Parameters:
+        Returns:
+        '''
+        try:
+            return re.match(pincode,regex_pincode)
+        except Exception as ex:
+            logging.critical(ex)
+        pass
 
