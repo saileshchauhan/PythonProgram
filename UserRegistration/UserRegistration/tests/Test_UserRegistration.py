@@ -20,7 +20,12 @@ class Test_Pytest_UserRegistration:
         result=UserRegistration.validate_mobileNumber(UserRegistration,"+912 7878787878")
         assert result==True
 
+    def test_given_pincode_should_return_True(self):
+        result=UserRegistration.validate_pincode(UserRegistration,"460551")
+        assert result==True
     
+    
+
     
     
 
