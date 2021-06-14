@@ -1,3 +1,11 @@
+'''
+@Author:Sailesh Chauhan
+@Date:2021-06-13
+@Last Modified by:Sailesh Chauhan
+@Last Modified time:2021-06-13
+@Title: User Registration pytest methods.
+'''
+
 import pytest
 from lib.userRegistration import UserRegistration
 

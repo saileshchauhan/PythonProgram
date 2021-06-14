@@ -6,7 +6,7 @@
 @Title: User Registration.
 '''
 
-import logConfig
+#import logConfig
 import re,logging
 
 class UserRegistration:
@@ -31,8 +31,7 @@ class UserRegistration:
         try:
             if(re.match(self.regex_firstName,firstName)):
                 return True
-            else:
-                return False
+            return False
         except Exception as ex:
             logging.critical(ex)
     
@@ -48,8 +47,7 @@ class UserRegistration:
         try:
             if(re.match(self.regex_lastName,lastName)):
                 return True
-            else:
-                return False
+            return False
         except Exception as ex:
             logging.critical(ex)
 
@@ -65,8 +63,7 @@ class UserRegistration:
         try:
             if(re.match(self.regex_mobileNumber,mobileNumber,)):
                 return True
-            else:
-                return False
+            return False
         except Exception as ex:
             logging.critical(ex)
     
@@ -82,8 +79,7 @@ class UserRegistration:
         try:
             if(re.match(self.regex_pincode,pincode)):
                 return True
-            else:
-                return False
+            return False
         except Exception as ex:
             logging.critical(ex)
     
@@ -99,8 +95,7 @@ class UserRegistration:
         try:
             if(re.match(self.regex_password,password)):
                 return True
-            else:
-                return False
+            return False
         except Exception as ex:
             logging.critical(ex)
         pass
@@ -117,8 +112,7 @@ class UserRegistration:
         try:
             if(re.match(self.regex_email,email)):
                 return True
-            else:
-                return False
+            return False
         except Exception as ex:
             logging.critical(ex)
 
