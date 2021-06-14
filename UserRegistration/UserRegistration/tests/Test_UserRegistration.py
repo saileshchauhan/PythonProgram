@@ -40,8 +40,8 @@ class Test_Pytest_UserRegistration:
             result=UserRegistration.validate_email(UserRegistration,email)
             assert result==True
 
-    ###Negative Test Cases
-    
+    #-------------------------Negative Test Cases--------------------------------------#
+
     def test_negative_given_listOfIncorrect_email_should_return_false(self):
         for invalidEmail in self.emailFail:
             result=UserRegistration.validate_email(UserRegistration,invalidEmail)
@@ -51,6 +51,9 @@ class Test_Pytest_UserRegistration:
         result=UserRegistration.validate_firstName(UserRegistration,"samuel")
         assert result==False
     
+    def test_negative_given_wrongLastName_should_return_false(self):
+        result=UserRegistration.validate_firstName(UserRegistration,"obama")
+        assert result==False
 
     
     
