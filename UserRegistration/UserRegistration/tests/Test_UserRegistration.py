@@ -52,8 +52,24 @@ class Test_Pytest_UserRegistration:
         assert result==False
     
     def test_negative_given_wrongLastName_should_return_false(self):
-        result=UserRegistration.validate_firstName(UserRegistration,"obama")
+        result=UserRegistration.validate_lastName(UserRegistration,"obama")
         assert result==False
+
+    def test_given_wrongMobileNumber_should_return_false(self):
+        result=UserRegistration.validate_mobileNumber(UserRegistration,"+9 78787878")
+        assert result==False
+
+    def test_given_wrongPincode_should_return_false(self):
+        result=UserRegistration.validate_pincode(UserRegistration,"46055")
+        assert result==False
+
+    def test_given_wrongPassword_should_return_false(self):
+        result=UserRegistration.validate_password(UserRegistration,"BridzeLabs88")
+        assert result==False
+    
+    
+
+    
 
     
     
