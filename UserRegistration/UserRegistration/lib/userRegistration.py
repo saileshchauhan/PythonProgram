@@ -39,8 +39,11 @@ class UserRegistration:
     def validate_lastName(self,lastName):
         '''
         Description:
+            Method validates last Name.
         Parameters:
+            self and last name.
         Returns:
+            Bool values True or False
         '''
         try:
             if(re.match(self.regex_lastName,lastName)):
@@ -53,8 +56,11 @@ class UserRegistration:
     def validate_mobileNumber(self,mobileNumber):
         '''
         Description:
+            Method validates mobile number.
         Parameters:
+            self and mobile number.
         Returns:
+            Bool values True or False.
         '''
         try:
             if(re.match(self.regex_mobileNumber,mobileNumber,)):
@@ -67,8 +73,11 @@ class UserRegistration:
     def validate_pincode(self,pincode):
         '''
         Description:
+            Method validates pincode.
         Parameters:
+            self and pincode.
         Returns:
+            Bool values True or False
         '''
         try:
             if(re.match(self.regex_pincode,pincode)):
@@ -81,8 +90,11 @@ class UserRegistration:
     def validate_password(self,password):
         '''
         Description:
+            Method validates password.
         Parameters:
+            self and password.
         Returns:
+            Bool values True or False
         '''
         try:
             if(re.match(self.regex_password,password)):
@@ -96,8 +108,11 @@ class UserRegistration:
     def validate_email(self,email):
         '''
         Description:
+            Method validates email.
         Parameters:
+            self and e-mail.
         Returns:
+            Bool values True or False
         '''
         try:
             if(re.match(self.regex_email,email)):
@@ -107,15 +122,5 @@ class UserRegistration:
         except Exception as ex:
             logging.critical(ex)
 
-    def invalid_email(self,invalidEmail):
-        '''
-        Description:
-        Parameters:
-        Returns:
-        '''
-        try:
-            return re.match(self.regex_email,invalidEmail)
-        except Exception as ex:
-            logging.critical(ex)
 
 
