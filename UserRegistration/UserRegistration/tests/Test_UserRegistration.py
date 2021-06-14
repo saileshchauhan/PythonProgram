@@ -7,24 +7,26 @@ class Test_Pytest_UserRegistration:
 
     emailFail=["abc","abc123@gmail.a","abc123@.com","abc123@.com.com","abc()*@gmail.com","abc..2002@gmail.com","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a","abc@gmail.com.aa.au"]
 
-
-    def test_given_firstName_should_return_True(self):
+    def test_given_firstName_should_return_true(self):
         result=UserRegistration.validate_firstName(UserRegistration,"Sailesh")
         assert result==True
 
-    def test_given_lastName_should_return_True(self):
+    def test_given_lastName_should_return_true(self):
         result=UserRegistration.validate_lastName(UserRegistration,"Obama")
         assert result==True
     
-    def test_given_mobileNumber_should_return_True(self):
+    def test_given_mobileNumber_should_return_true(self):
         result=UserRegistration.validate_mobileNumber(UserRegistration,"+912 7878787878")
         assert result==True
 
-    def test_given_pincode_should_return_True(self):
+    def test_given_pincode_should_return_true(self):
         result=UserRegistration.validate_pincode(UserRegistration,"460551")
         assert result==True
     
-    
+    def test_given_password_should_return_true(self):
+        result=UserRegistration.validate_password(UserRegistration,"BridzeLabs88&")
+        assert result==True
+
 
     
     

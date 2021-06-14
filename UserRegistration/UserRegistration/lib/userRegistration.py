@@ -22,8 +22,11 @@ class UserRegistration:
     def validate_firstName(self,firstName):
         '''
         Description:
+            Method validates first Name.
         Parameters:
+            self and firstName.
         Returns:
+            Bool values True or False
         '''
         try:
             if(re.match(self.regex_firstName,firstName)):
@@ -115,4 +118,4 @@ class UserRegistration:
         except Exception as ex:
             logging.critical(ex)
 
-#regex=RegexPattern()
+
