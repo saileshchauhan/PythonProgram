@@ -6,7 +6,7 @@
 @Title: User Registration main class.
 '''
 
-#from UserRegistration import logConfig
+from UserRegistration import logConfig
 import re,logging
 from userRegistration import UserRegistration
 
