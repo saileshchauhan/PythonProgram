@@ -3,3 +3,6 @@
 *__pycache__
 *LogFiles/
 *logconfig.py
+*.pytest_cache
+*Pytest_Env
+*.vscode/
