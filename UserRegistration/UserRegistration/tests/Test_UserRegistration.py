@@ -27,7 +27,15 @@ class Test_Pytest_UserRegistration:
         result=UserRegistration.validate_password(UserRegistration,"BridzeLabs88&")
         assert result==True
 
+    def test_given_listOfCorrect_email_shoul_return_true(self):
+        for email in self.emailPass:
+            result=UserRegistration.validate_email(UserRegistration,email)
+            assert result==True
 
+    def test_negative_given_listOfIncorrect_email_should_return_false(self):
+        for invalidEmail in self.emailFail:
+            result=UserRegistration.validate_email(UserRegistration,invalidEmail)
+            assert result==False
     
 
     
