@@ -16,7 +16,7 @@ class UserRegistration:
     regex_lastName="^[A-Z]{1}[a-z]{2,}$"
     regex_firstName = "^[A-Z]{1}[a-z]{2,}$"
     regex_password="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
-    regex_email= "^[a-z0-9A-Z]+([./*$#%][a-zA-Z0-9]{1,})?[@][a-zA-Z]{2,}[.][a-zA-Z]{2,}([.][a-zA-Z]{2})?$"
+    regex_email= "^[a-z0-9A-Z]+([-+.$#%][a-zA-Z0-9]{1,})?[@][a-zA-Z0-9]{2,}[.][a-zA-Z]{2,}([.][a-zA-Z]{2,})?$"
 
 
     def validate_firstName(self,firstName):
@@ -115,4 +115,4 @@ class UserRegistration:
         except Exception as ex:
             logging.critical(ex)
 
-regex=RegexPattern()
+#regex=RegexPattern()
