@@ -16,7 +16,7 @@ class Test_Pytest_UserRegistration:
     emailFail=["abc","abc123@gmail.a","abc123@.com","abc123@.com.com","abc()*@gmail.com","abc..2002@gmail.com","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a","abc@gmail.com.aa.au"]
 
     def test_given_firstName_should_return_true(self):
-        result=UserRegistration.validate_firstName(UserRegistration,"Sailesh")
+        result=UserRegistration.validate_firstName(UserRegistration,"Samuel")
         assert result==True
 
     def test_given_lastName_should_return_true(self):
@@ -40,10 +40,16 @@ class Test_Pytest_UserRegistration:
             result=UserRegistration.validate_email(UserRegistration,email)
             assert result==True
 
+    ###Negative Test Cases
+    
     def test_negative_given_listOfIncorrect_email_should_return_false(self):
         for invalidEmail in self.emailFail:
             result=UserRegistration.validate_email(UserRegistration,invalidEmail)
             assert result==False
+
+    def test_negative_given_wrongFirstName_should_return_false(self):
+        result=UserRegistration.validate_firstName(UserRegistration,"samuel")
+        assert result==False
     
 
     
