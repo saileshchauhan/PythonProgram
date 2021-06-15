@@ -6,7 +6,7 @@
 @Title: User Registration.
 '''
 
-import logConfig
+#import logConfig
 import re,logging
 
 class UserRegistration:

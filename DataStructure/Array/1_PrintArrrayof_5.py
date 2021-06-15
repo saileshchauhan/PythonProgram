@@ -6,19 +6,18 @@
 @Title: Print Array values using indexes.
 '''
 
-import logging
+import logging,array
 from decouple import config
-
-FILE_NAME=config('Log_File_Path')
-logging.basicConfig(filename=FILE_NAME,level=logging.CRITICAL,format='%(asctime)s - %(levelname)s - %(message)s')
-
+#from DataStructure import logconfig
 def print_array_using_index():
     '''
+    Description:
+
     '''
     try:
-        array=list(input("Enter 5 number without space then enter "))
-        for count in range(len(array)):
-            print(array[count])
+        intArray=array.array('i',(5,5,3,4,2))
+        for count in range(len(intArray)-1):
+            print(intArray[count])
     except Exception as ex:
         logging.critical(ex)
 
