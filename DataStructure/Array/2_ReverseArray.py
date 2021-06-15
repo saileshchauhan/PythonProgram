@@ -8,13 +8,18 @@
 
 import array
 import logging
-from DataStructure import logconfig
+import sys
+sys.path.append(r"D:\OOPs\DataStructure")
+import logconfig
 
 def reverseArray(array):
     '''
     Description:
+        Method reverses array.
     Parameters:
+        Takes array as parameter.
     Return:
+        Return array after reversing it.
     '''
     count=(len(array)-1)
     length=len(array)//2
@@ -31,8 +36,12 @@ print(reverseArray(strArray))
 def reverseArrayWhile(array):
     '''
     Description:
+        Methods reverses array using logic with while and value
+        swapping. 
     Parameters:
+        Takes array as parameter.
     Return:
+        Returns array.
     '''
     start=0
     end=len(array)-1

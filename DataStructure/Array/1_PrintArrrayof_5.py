@@ -7,18 +7,25 @@
 '''
 
 import logging,array
-from decouple import config
-#from DataStructure import logconfig
-def print_array_using_index():
+import sys
+
+sys.path.append(r"D:\OOPs\DataStructure")
+import logconfig
+
+def print_array_using_index(array):
     '''
     Description:
-
+        Method prints array using indexes.
+    Parameters:
+        Method takes array of any size.
+    Returns:
+        Method logs array values to log file.
     '''
     try:
-        intArray=array.array('i',(5,5,3,4,2))
-        for count in range(len(intArray)-1):
-            print(intArray[count])
+        for count in range(len(array)-1):
+            logging.info(array[count])
     except Exception as ex:
         logging.critical(ex)
 
-print_array_using_index()
+intArray=array.array('i',(5,5,3,4,2))
+print_array_using_index(intArray)
