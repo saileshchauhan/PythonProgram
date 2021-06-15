@@ -20,12 +20,13 @@ class Contact:
     Function:
         No Function.
     '''
+    
     def __init__(self,firstName,lastName,city,contact):
         self.firstName=firstName
         self.lastName=lastName
         self.city    =city
         self.contact =contact
-        pass
+        
 
 def addContact():
     '''

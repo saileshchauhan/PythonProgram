@@ -6,34 +6,42 @@
 @Title: Print Array values after reversing order.
 '''
 
+import array
 import logging
-from decouple import config
-
-FILE_NAME=config('Log_File_Path')
-logging.basicConfig(filename=FILE_NAME,level=logging.CRITICAL,format='%(asctime)s - %(levelname)s - %(message)s')
+import sys
+sys.path.append(r"D:\OOPs\DataStructure")
+import logconfig
 
 def reverseArray(array):
     '''
     Description:
+        Method reverses array.
     Parameters:
+        Takes array as parameter.
     Return:
+        Return array after reversing it.
     '''
-    count=len(array)-1
+    count=(len(array)-1)
     length=len(array)//2
     for index in range(length):
         temp=array[index]
-        array[index]=array[count]
-        array[count]=temp
+        array[index]=array.pop(count)
+        array.insert(count,temp)
         count-=1
-    print(array)
+    return array        
 
-reverseArray(['a','b','c','d'])
+strArray=array.array('u',('a','b','c','d','e'))
+print(reverseArray(strArray))
 
-def reverseArray(array):
+def reverseArrayWhile(array):
     '''
     Description:
+        Methods reverses array using logic with while and value
+        swapping. 
     Parameters:
+        Takes array as parameter.
     Return:
+        Returns array.
     '''
     start=0
     end=len(array)-1
@@ -41,6 +49,7 @@ def reverseArray(array):
         array[start],array[end]=array[end],array[start]
         start+=1
         end-=1
-    print(array)
+    return array
 
-reverseArray([1,2,3,4,5])
+intArray=array.array('i',(1,2,3,4,5))
+print(reverseArrayWhile(intArray))
