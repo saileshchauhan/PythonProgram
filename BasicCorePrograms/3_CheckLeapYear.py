@@ -18,4 +18,4 @@ try:
         quit()
     print("Enter in YYYY format")
 except Exception as ex:
-    print(ex.__class__)
+    print(ex)

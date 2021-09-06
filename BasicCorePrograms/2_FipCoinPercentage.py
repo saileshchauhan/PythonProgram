@@ -26,7 +26,7 @@ try:
     print("Percentage of Head Occurence ",int((headCount/timesToFlipCoin)*100))
     print("Percentage of Tail Occurence ",int((tailCount/timesToFlipCoin)*100))
 except Exception as ex:
-    print(ex.__class__)
+    print(ex)
     
 
 

@@ -15,4 +15,4 @@ try:
         quit()
     print("User Name must be more than 3 characters") 
 except Exception as ex:
-    print(ex.__class__)
+    print(ex)

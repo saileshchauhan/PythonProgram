@@ -15,7 +15,7 @@ try:
                 print(CONSTANT**power)
                 power+=1
 except Exception as ex:
-    print(ex.__class__)
+    print(ex)
     print("Invalid Input Enter zero or more")
     exit()
 

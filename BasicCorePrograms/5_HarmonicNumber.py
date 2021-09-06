@@ -12,5 +12,5 @@ try:
         nthNumber+=(1/count)
     print("nthNumber {0} for nthTerm {1}".format(nthNumber,nthTerm))
 except Exception as ex:
-    print(ex.__class__)
+    print(ex)
         

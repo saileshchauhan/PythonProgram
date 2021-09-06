@@ -22,4 +22,4 @@ try:
             primeFactor.append(inputNumber)
         print("All PrimeFactors ",*primeFactor)
 except Exception as ex:
-    print(ex.__class__)
+    print(ex)
